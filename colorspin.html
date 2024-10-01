@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Spectrum Color Spinning</title>
+    <style>
+        /* Centering the spinner */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0; /* Light background to make the spinner stand out */
+        }
+
+        /* Container for the spinning effect */
+        .spinner {
+            width: 200px; /* Increased size for visibility */
+            height: 200px;
+            border-radius: 50%;
+            background: red; /* Starting color */
+            animation: none;
+        }
+
+        /* Keyframes for specific color rotation */
+        @keyframes colorSpin {
+            0% { background-color: red; }
+            10% { background-color: yellow; }
+            20% { background-color: blue; }
+            30% { background-color: green; }
+            40% { background-color: black; }
+            50% { background-color: white; }
+            60% { background-color: grey; }
+            70% { background-color: silver; }
+            80% { background-color: gold; }
+            85% { background-color: violet; }
+            90% { background-color: orange; }
+            95% { background-color: #00FF00; } /* Radium-like green */
+            97% { background-color: indigo; }
+            100% { background-color: red; } /* Loop back to start */
+        }
+
+        /* Applying animation class */
+        .spin {
+            animation: colorSpin 4s linear infinite;
+        }
+
+        /* Button container */
+        .button-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Element with the spinning effect -->
+    <div class="spinner" id="spinner"></div>
+
+    <!-- Buttons to control the spinning -->
+    <div class="button-container">
+        <button onclick="startSpin()" style="padding: 10px 20px; font-size: 16px; margin-right: 10px; cursor: pointer; background-color: #4CAF50; color: white; border: none; border-radius: 5px;">Start Spinning</button>
+        <button onclick="stopSpin()" style="padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #f44336; color: white; border: none; border-radius: 5px;">Stop Spinning</button>
+    </div>
+
+    <script>
+        // Function to start the spinning
+        function startSpin() {
+            document.getElementById('spinner').classList.add('spin');
+        }
+
+        // Function to stop the spinning
+        function stopSpin() {
+            document.getElementById('spinner').classList.remove('spin');
+        }
+    </script>
+
+</body>
+</html>
